@@ -1,5 +1,5 @@
 # HansGesture2
-Gesture Control AI is an innovative computer vision application that allows users to control their laptop and operate various functions entirely hands-free using simple gestures captured by the webcam. This Python-based system eliminates the need for external devices like a mouse or keyboard for basic interactions.
+Gesture Control AI is an innovative computer vision application that allows users to control their laptop and operate various functions entirely hands-free using simple gestures captured by the webcam. This Python-based system eliminates the need for external devices like a mouse or keyboard for basic interactions, now updated with AI and voice control
 
 # Hand Gesture Control API  
 A FastAPI-based backend that powers a real-time hand-gesture controlled system for Windows.  
@@ -8,7 +8,7 @@ This API handles:
 - 🎥 Live webcam streaming (MJPEG)
 - ✋ Hand gesture detection (MediaPipe)
 - 🖱️ Cursor control & system actions  
-- 🔊 Voice assistant activation via gestures  
+- 🔊 Voice assistant activation via gestures + AI
 - 🌓 System brightness & volume control  
 - 🚀 App launching via hand zones
 

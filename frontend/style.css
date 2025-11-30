@@ -1,0 +1,386 @@
+/* Global Layout */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: url("assets/bg.jpg") no-repeat center center;
+    background-size: cover;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Title */
+.title-container {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-family: "Rubik Iso", cursive;
+    font-size: 90px;
+    color: #86DDFF;
+    margin: 0;
+}
+
+/* Main Layout */
+.main-row {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-top: 140px;
+}
+
+.left-col {
+    width: 900px;
+    margin-left: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Camera Frame */
+.screen-frame {
+    width: 768px;
+    height: 384px;
+
+    background: #e6e6e6;
+    border-radius: 16px;
+    border: 6px solid #2893D7;
+
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cam-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-fallback {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(0,0,0,0.6);
+    pointer-events: none;
+}
+
+/* DETECTORS */
+.detectors-row {
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.detectorA {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 35px;
+    margin-left: -10px;
+}
+.detector {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+
+.detector-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;   /* jaga proporsi gambar */
+    object-position: center;
+}
+
+/* Bars */
+.detector-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 710px;
+}
+
+.detector-bar-frame {
+    width: 714px;
+    height: 10px;
+
+    background: rgba(255,255,255,0.15);
+    border: 3px solid #418DBE;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.detector-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #7fe0ff, #2bb8ff);
+    transition: width 0.25s ease-out;
+}
+
+.detector-label {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #c9f1ff;
+    opacity: 0.9;
+    text-align: right;
+}
+
+/* Right Column */
+.right-col {
+    flex: 1;
+    padding-right: 40px;
+    margin-left: -40px;
+    margin-top: -45px;
+}
+
+/* Start Button */
+.btn-container {
+    position: fixed;
+    left: 70px;
+    bottom: 36px;
+}
+
+.btn-primary {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+.sleepui-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 30px;
+    background: none;
+    border-radius: 25px;
+}
+.timerui-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 30px;
+    background: none;
+    border-radius: 25px;
+    margin-left: -30px;
+    margin-top: -60px;
+}
+/* ==============================
+   LEFT: TOGGLE (img version)
+   ============================== */
+
+.sleepui-toggle-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* tidak stretch */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.timerui-toggle-image:active {
+    transform: scale(0.95);
+}
+
+.timerui-toggle-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* tidak stretch */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.timerui-toggle-image:active {
+    transform: scale(0.95);
+}
+
+/* ==============================
+   LEFT: TOGGLE (animated version)
+   ============================== */
+
+.sleepui-switch {
+    width: 140px;
+    height: 70px;
+    background: #0A2A3B;
+    border-radius: 40px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.sleepui-switch-circle {
+    width: 50px;
+    height: 50px;
+    background: #86DDFF;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* ON STATE */
+.sleepui-switch.sleepui-active {
+    background: #1C6B9A;
+}
+
+.sleepui-switch.sleepui-active .sleepui-switch-circle {
+    transform: translateX(70px);
+}
+
+/* ==============================
+   TIMER TEXT
+   ============================== */
+
+.sleepui-timer-text {
+    font-family: 'Rubik Iso', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 150px;
+    text-align: center;
+    margin-top: -40px;
+}
+.ui-timer {
+    font-family: 'Rubik Iso', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 150px;
+    text-align: center;
+    margin-top: -15px;
+}
+.sleep-title {
+    font-family: 'Rubik Iso', sans-serif;
+    font-size: 48px;
+    color: #86DDFF;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 150px;
+    text-align: center;
+    margin-bottom: -40px;
+}
+.timer-title {
+    font-family: 'Rubik Iso', sans-serif;
+    font-size: 48px;
+    color: #86DDFF;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 200px;
+    text-align: center;
+    margin-bottom: -15px;
+}
+/* ==============================
+   EXIT BUTTON
+   ============================== */
+
+.sleepui-exit-btn {
+    width: 216px;
+    height: 166px;
+
+    background: transparent;
+    border: 8px solid #154D71;
+
+    border-radius: 30px;
+    font-family: 'Rubik Iso', sans-serif;
+    font-size: 64px;
+    color: #86DDFF;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-left: 20px;
+}
+
+.sleepui-exit-btn:hover {
+    background: rgba(134, 221, 255, 0.1);
+}
+
+.sleepui-exit-btn:active {
+    transform: scale(0.95);
+}
+/* ============================
+   UPLEFT BLOCK (Sleep section)
+   ============================ */
+.upleft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* spacing geometry */
+    gap: -12px;                /* Jarak antara “Sleep”, switch, dan timer */
+
+    /* Optional: ukurannya mengikuti contoh */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.clock-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -40px;
+}
+
+.clock-display {
+    font-family: 'Rubik Iso', cursive;
+    font-size: 128px;
+    color: #86DDFF;
+    text-shadow:
+        0 0 10px #86DDFF,
+        0 0 20px #86DDFF,
+        0 0 40px #4dc4ff;
+    letter-spacing: 6px;
+
+    /* breathing glow animation */
+    animation: glowBreath 3s ease-in-out infinite;
+}
+
+/* breathing animation */
+@keyframes glowBreath {
+    0% {
+        text-shadow: 0 0 10px #86DDFF, 0 0 20px #4dc4ff;
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 25px #86DDFF, 0 0 45px #4dc4ff;
+        transform: scale(1.04);
+    }
+    100% {
+        text-shadow: 0 0 10px #86DDFF, 0 0 20px #4dc4ff;
+        transform: scale(1);
+    }
+}
+
+/* flip effect when time updates */
+.flip {
+    animation: flipAnim 0.2s ease;
+}
+
+@keyframes flipAnim {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(45deg); }
+    100% { transform: rotateX(0deg); }
+}

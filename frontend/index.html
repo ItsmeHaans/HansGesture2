@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hand Gesture — Sleep UI</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TITLE (tetap seperti milikmu) -->
+  <div class="title-container">
+      <h1 class="main-title">Hand Gesture</h1>
+  </div>
+
+  <div id="main-row" class="main-row">
+    <div id="left-col" class="left-col">
+      <!-- camera frame & detectors ... tetap (kamu sudah punya) -->
+      <div id="screen-frame" class="screen-frame">
+        <img id="videoStream" class="cam-video" src="" alt="camera" />
+        <div class="video-fallback">Press "Start Main" to run</div>
+      </div>
+
+      <!-- detectors (volume/brightness) kept as-is -->
+      <div class="detectorA">
+          <img src="assets/volume.png" class="detector-icon" />
+          <div class="detector-bar-wrap">
+              <div class="detector-bar-frame">
+                  <div id="volumeBar" class="detector-bar-fill"></div>
+              </div>
+          </div>
+      </div>
+
+      <div class="detector">
+          <img src="assets/bright.png" class="detector-icon" />
+          <div class="detector-bar-wrap">
+              <div class="detector-bar-frame">
+                  <div id="brightBar" class="detector-bar-fill"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: SISI KANAN ATAS (sleep UI) -->
+    <div id="right-col" class="right-col">
+
+      <div class="sleepui-container">
+          <div class="upleft">
+            <div id="sleep-title" class="sleep-title">Sleep</div>
+              <!-- image switch (VERSION A) -->
+        <div class="sleepui-toggle-wrapper">
+          <img id="sleepui-toggle-img"
+               class="sleepui-toggle-image"
+               src="assets/off.png"
+               alt="sleep toggle (off/on)">
+        </div>
+
+        <!-- animated switch (VERSION B) - comment/uncomment as needed -->
+        <!--
+        <div id="sleepui-switch" class="sleepui-switch" aria-hidden="true">
+          <div class="sleepui-switch-circle"></div>
+        </div>
+        -->
+
+        <!-- timer text (format mm:ss) -->
+        <div id="sleepui-timer" class="sleepui-timer-text">60:00</div>
+          </div>
+
+
+
+        <!-- exit button -->
+        <button class="sleepui-exit-btn" id="sleepui-exit-btn">Turn Off</button>
+
+      </div>
+        <div class="timerui-container">
+          <div class="upleft">
+            <div id="timer-title" class="timer-title">Timer</div>
+              <!-- image switch (VERSION A) -->
+        <div class="timer-wrapper">
+          <img id="timerui-toggle-img"
+               class="timerui-toggle-image"
+               src="assets/timer.png"
+               >
+        </div>
+
+        <!-- animated switch (VERSION B) - comment/uncomment as needed -->
+        <!--
+        <div id="sleepui-switch" class="sleepui-switch" aria-hidden="true">
+          <div class="sleepui-switch-circle"></div>
+        </div>
+        -->
+
+        <!-- timer text (format mm:ss) -->
+        <div id="ui-timer" class="ui-timer">60:00</div>
+          </div>
+
+
+
+        <!-- exit button -->
+        <div class="ai-wrapper">
+          <img id="aiui-toggle-img"
+               class="aiui-toggle-image"
+               src="assets/ai.png"
+               >
+        </div>
+
+      </div>
+         <div class="clock-wrapper">
+        <div id="digital-clock" class="clock-display">00:00</div>
+    </div>
+    </div>
+
+  </div>
+<!-- START BUTTON --> <div class="btn-container"> <button id="btnStartMain" class="btn-primary"></button> </div>
+  <!-- hidden audio element (we'll control it from JS) -->
+  <audio id="sleepui-audio" preload="auto" src="assets/lagu.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

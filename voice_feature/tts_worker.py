@@ -7,7 +7,7 @@ from gtts import gTTS  # <-- Tambahkan import ini
 
 # import google.generativeai as genai # <-- Hapus atau biarkan tidak terpakai
 
-# API_KEY = "AIzaSyAlqOmzYxF1MD5gfACpByyUZSJX5JfJWQo" # <-- Tidak perlu API key di sini
+# API_KEY = "API" # <-- Tidak perlu API key di sini
 
 def speak(text):
     path = "tts_output.mp3"
@@ -42,4 +42,5 @@ if __name__ == "__main__":
 
     # Pastikan teks yang diparsing dari sys.argv[1] sudah benar
     text = sys.argv[1]
+
     speak(text)

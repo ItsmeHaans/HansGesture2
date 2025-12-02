@@ -1,7 +1,7 @@
 # backend_voice_chat.py
 from .chatbot_voice import VoiceChatBot
 
-API_KEY = "AIzaSyAlqOmzYxF1MD5gfACpByyUZSJX5JfJWQo"
+API_KEY = "API"
 
 # Function call untuk frontend
 def run_voice_chat():
@@ -19,3 +19,4 @@ def run_voice_chat():
     bot.start_chat(callback=chat_callback)
 
     return result   # frontend tinggal ambil result["ai"]
+
